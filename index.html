@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JM Motors | Reliable Auto Repairs</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #1e2b37;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* header / nav */
+    .navbar {
+      background: #0b1a26;
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      border-bottom: 3px solid #f5b342;
+    }
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .logo i {
+      font-size: 2.4rem;
+      color: #f5b342;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+    .logo h1 {
+      font-weight: 700;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+    .logo span {
+      font-weight: 300;
+      color: #b0c7d9;
+    }
+    .nav-phone {
+      background: #f5b342;
+      color: #0b1a26;
+      padding: 0.6rem 1.6rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      transition: 0.2s;
+      box-shadow: 0 4px 10px rgba(245, 179, 66, 0.3);
+    }
+    .nav-phone:hover {
+      background: #ffc857;
+      transform: scale(1.04);
+      box-shadow: 0 6px 14px rgba(245, 179, 66, 0.4);
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(145deg, #0d1f2b, #1a3341);
+      color: white;
+      padding: 4rem 0 5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(245, 179, 66, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-text {
+      flex: 1 1 300px;
+    }
+    .hero-text h2 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+    .hero-text h2 i {
+      color: #f5b342;
+      margin-right: 0.25rem;
+    }
+    .hero-text .tagline {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      margin-bottom: 1.2rem;
+      border-left: 5px solid #f5b342;
+      padding-left: 1.2rem;
+      font-weight: 300;
+    }
+    .hero-text .address {
+      background: rgba(255,255,255,0.07);
+      padding: 0.8rem 1.6rem;
+      border-radius: 60px;
+      display: inline-block;
+      backdrop-filter: blur(6px);
+      font-size: 1rem;
+      border: 1px solid rgba(255,255,255,0.05);
+      margin-top: 0.5rem;
+    }
+    .hero-text .address i {
+      margin-right: 0.6rem;
+      color: #f5b342;
+    }
+    .hero-image {
+      flex: 1 1 280px;
+      background: #2b4a5a;
+      border-radius: 32px;
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><rect width="100" height="100" fill="%233a5b6b"/><text x="12" y="50" font-family="system-ui" font-size="12" fill="%23d4e3ed" opacity="0.7">PLACEHOLDER</text><text x="12" y="70" font-family="system-ui" font-size="9" fill="%23d4e3ed" opacity="0.5">🚗 JM MOTORS</text></svg>');
+      background-size: cover;
+      background-blend-mode: overlay;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-image i {
+      font-size: 4.5rem;
+      color: #f5b342;
+      opacity: 0.9;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    }
+    .hero-image p {
+      color: white;
+      font-weight: 300;
+      letter-spacing: 1px;
+      background: rgba(0,0,0,0.2);
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+    }
+
+    /* info cards */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.8rem;
+      margin: 2.5rem 0;
+    }
+    .info-card {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem 1.2rem;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+      border: 1px solid #eef2f6;
+      transition: all 0.25s ease;
+      text-align: center;
+    }
+    .info-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px rgba(0,0,0,0.08);
+      border-color: #f5b342;
+    }
+    .info-card i {
+      font-size: 2.5rem;
+      color: #f5b342;
+      margin-bottom: 0.6rem;
+    }
+    .info-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+      color: #0b1a26;
+    }
+    .info-card p {
+      font-size: 0.9rem;
+      color: #3e5563;
+    }
+
+    /* services */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 3.5rem 0 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .section-title i {
+      color: #f5b342;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 1rem;
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 32px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+      border: 1px solid #eef2f6;
+    }
+    .service-item {
+      background: #f8faff;
+      padding: 0.7rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1e3a4b;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: 1px solid #e3eaf0;
+      transition: 0.15s;
+    }
+    .service-item i {
+      color: #f5b342;
+      width: 1.2rem;
+      font-size: 0.9rem;
+    }
+    .service-item.primary {
+      background: #0b1a26;
+      color: white;
+      border-color: #0b1a26;
+    }
+    .service-item.primary i {
+      color: #f5b342;
+    }
+    .service-item:hover {
+      background: #eef4fa;
+      border-color: #bccddb;
+      transform: scale(1.02);
+    }
+
+    /* contact form */
+    .contact-section {
+      background: white;
+      border-radius: 40px;
+      padding: 3rem 2.5rem;
+      margin: 3.5rem 0;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.04);
+      border: 1px solid #e6edf4;
+    }
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+    .contact-info {
+      flex: 1 1 260px;
+    }
+    .contact-info h3 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #0b1a26;
+    }
+    .contact-info p {
+      color: #2b4a5a;
+      margin-bottom: 1.8rem;
+    }
+    .contact-info .detail {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.2rem 0;
+      font-size: 1rem;
+    }
+    .contact-info .detail i {
+      width: 2.2rem;
+      color: #f5b342;
+      font-size: 1.3rem;
+    }
+    .contact-form {
+      flex: 2 1 360px;
+    }
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #1a3341;
+      font-size: 0.95rem;
+    }
+    .form-group input, 
+    .form-group textarea {
+      width: 100%;
+      padding: 0.9rem 1.5rem;
+      border: 1px solid #d7dfe7;
+      border-radius: 60px;
+      font-size: 1rem;
+      background: #f9fcff;
+      transition: 0.2s;
+    }
+    .form-group input:focus, 
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #f5b342;
+      box-shadow: 0 0 0 5px rgba(245, 179, 66, 0.12);
+      background: white;
+    }
+    .form-group textarea {
+      border-radius: 28px;
+      min-height: 130px;
+      resize: vertical;
+    }
+    .btn-submit {
+      background: #0b1a26;
+      color: white;
+      border: none;
+      padding: 1rem 2.8rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      cursor: pointer;
+      transition: 0.25s;
+      box-shadow: 0 4px 12px rgba(11, 26, 38, 0.2);
+    }
+    .btn-submit:hover {
+      background: #f5b342;
+      color: #0b1a26;
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(245, 179, 66, 0.3);
+    }
+    .btn-submit i {
+      font-size: 1.2rem;
+    }
+    .note {
+      font-size: 0.85rem;
+      color: #4e6b7a;
+      margin-top: 1rem;
+    }
+
+    /* placeholder images (gallery) */
+    .gallery-placeholder {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.2rem;
+      margin: 2rem 0 1.5rem;
+    }
+    .placeholder-img {
+      background: #d9e3ec;
+      border-radius: 28px;
+      height: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #1f3d4e;
+      font-size: 0.9rem;
+      font-weight: 500;
+      background-image: repeating-linear-gradient(45deg, #c6d4e0 0px, #c6d4e0 8px, #dce6ef 8px, #dce6ef 16px);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5);
+      border: 1px solid #b2c4d3;
+      transition: 0.2s;
+    }
+    .placeholder-img i {
+      font-size: 2.8rem;
+      color: #2b4a5a;
+      opacity: 0.5;
+      margin-bottom: 0.2rem;
+    }
+    .placeholder-img span {
+      background: rgba(255,255,255,0.6);
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #0b1a26;
+    }
+    .placeholder-img:hover {
+      transform: scale(1.02);
+      border-color: #f5b342;
+    }
+
+    .map-placeholder {
+      background: #a6bccd;
+      border-radius: 30px;
+      height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      font-weight: 600;
+      color: #0b1a26;
+      background-image: radial-gradient(circle at 10% 20%, #b8cedd 2px, transparent 2px);
+      background-size: 30px 30px;
+      border: 1px solid #9bb3c5;
+      margin: 1.5rem 0 2.5rem;
+      font-size: 1.1rem;
+    }
+    .map-placeholder i {
+      font-size: 2.2rem;
+      color: #0b1a26;
+      opacity: 0.5;
+    }
+
+    /* quote block */
+    .quote-block {
+      background: #e8f0f6;
+      border-radius: 60px;
+      padding: 2rem 2.5rem;
+      margin: 2rem 0 1.5rem;
+      border-left: 8px solid #f5b342;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .quote-block p {
+      font-style: italic;
+      color: #0b1a26;
+      font-size: 1.15rem;
+      font-weight: 400;
+    }
+
+    footer {
+      background: #0b1a26;
+      color: #b6ccdb;
+      padding: 2.5rem 0;
+      margin-top: 3rem;
+      border-radius: 40px 40px 0 0;
+      border-top: 3px solid #f5b342;
+    }
+    footer .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    footer small {
+      opacity: 0.6;
+    }
+    .footer-phone {
+      color: #f5b342;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    /* responsive */
+    @media (max-width: 600px) {
+      .hero-text h2 { font-size: 2.4rem; }
+      .navbar .container { flex-direction: column; gap: 0.8rem; }
+      .contact-flex { flex-direction: column; }
+      .contact-section { padding: 2rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-car"></i>
+        <h1>JM <span>MOTORS</span></h1>
+      </div>
+      <a href="tel:0825805232" class="nav-phone">
+        <i class="fas fa-phone-alt"></i> 082 580 5232
+      </a>
+    </div>
+  </nav>
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-text">
+        <h2><i class="fas fa-wrench"></i> Reliable Auto Repairs</h2>
+        <div class="tagline">Sannieshof, North West</div>
+        <p style="margin-bottom: 1.2rem; opacity:0.9; max-width: 480px;">Trusted local mechanic shop – quality servicing, diagnostics & maintenance.</p>
+        <div class="address">
+          <i class="fas fa-map-pin"></i> 7 Koos de la Rey St, Roosville, Sannieshof, 2760
+        </div>
+        <div style="margin-top: 1.2rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+          <span style="background: #f5b34220; padding:0.4rem 1.2rem; border-radius:60px; backdrop-filter: blur(4px);"><i class="far fa-clock"></i> Mon-Fri 08:00 – 17:00</span>
+          <span style="background: #f5b34220; padding:0.4rem 1.2rem; border-radius:60px; backdrop-filter: blur(4px);"><i class="fas fa-map-marker-alt"></i> FRC6+5P Sannieshof</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <i class="fas fa-tools"></i>
+        <p>📸 place holder · JM Motors</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- quick info cards -->
+    <div class="info-grid">
+      <div class="info-card"><i class="fas fa-check-circle"></i><h4>Honest advice</h4><p>Quality workmanship</p></div>
+      <div class="info-card"><i class="fas fa-star"></i><h4>Dependable service</h4><p>Competitive prices</p></div>
+      <div class="info-card"><i class="fas fa-shield-alt"></i><h4>Your car in good hands</h4><p>Experienced team</p></div>
+    </div>
+
+    <!-- services -->
+    <div class="section-title"><i class="fas fa-list-ul"></i> Our Services</div>
+    <div class="services-grid">
+      <span class="service-item primary"><i class="fas fa-tools"></i> Vehicle repair shop</span>
+      <span class="service-item"><i class="fas fa-filter"></i> Air & cabin filter</span>
+      <span class="service-item"><i class="fas fa-car-battery"></i> Battery</span>
+      <span class="service-item"><i class="fas fa-stop-circle"></i> Brakes</span>
+      <span class="service-item"><i class="fas fa-oil-can"></i> Oil change</span>
+      <span class="service-item"><i class="fas fa-steering-wheel"></i> Steering & suspension</span>
+      <span class="service-item"><i class="fas fa-cog"></i> Transmission</span>
+      <span class="service-item"><i class="fas fa-microchip"></i> Engine diagnostic</span>
+      <span class="service-item"><i class="fas fa-burn"></i> Carburetor cleaning</span>
+      <span class="service-item"><i class="fas fa-bolt"></i> Electrical repair</span>
+      <span class="service-item"><i class="fas fa-engine"></i> Engine repair</span>
+      <span class="service-item"><i class="fas fa-smog"></i> Exhaust</span>
+      <span class="service-item"><i class="fas fa-tasks"></i> General repairs & maintenance</span>
+      <span class="service-item"><i class="fas fa-exchange-alt"></i> Transmission repair</span>
+      <span class="service-item"><i class="fas fa-exchange-alt"></i> Transmission replacement</span>
+      <span class="service-item"><i class="fas fa-car-battery"></i> Battery replacement</span>
+      <span class="service-item"><i class="fas fa-stop-circle"></i> Brake repair</span>
+      <span class="service-item"><i class="fas fa-stop-circle"></i> Brake replacement</span>
+    </div>
+
+    <!-- placeholder images gallery (for future photos) -->
+    <div style="margin: 2.5rem 0 0.5rem;">
+      <span style="font-weight:700; font-size:1.3rem;"><i class="fas fa-camera" style="color:#f5b342;"></i> Placeholder images – add your photos</span>
+    </div>
+    <div class="gallery-placeholder">
+      <div class="placeholder-img"><i class="fas fa-image"></i><span>workshop</span></div>
+      <div class="placeholder-img"><i class="fas fa-image"></i><span>brake service</span></div>
+      <div class="placeholder-img"><i class="fas fa-image"></i><span>engine</span></div>
+      <div class="placeholder-img"><i class="fas fa-image"></i><span>team</span></div>
+      <div class="placeholder-img"><i class="fas fa-image"></i><span>exterior</span></div>
+    </div>
+
+    <!-- map placeholder -->
+    <div class="map-placeholder">
+      <i class="fas fa-map-marked-alt"></i> 7 Koos de la Rey St, Roosville · <i class="fas fa-location-dot" style="color:#0b1a26;"></i> FRC6+5P
+    </div>
+
+    <!-- contact section (with form) -->
+    <div class="contact-section" id="contact">
+      <div class="section-title" style="margin-top:0;"><i class="fas fa-envelope"></i> Contact Us</div>
+      <div class="contact-flex">
+        <div class="contact-info">
+          <h3>Get in touch</h3>
+          <p>We'll respond within 24 hours. Or call us directly.</p>
+          <div class="detail"><i class="fas fa-phone-alt"></i> 082 580 5232</div>
+          <div class="detail"><i class="fas fa-map-pin"></i> 7 Koos de la Rey St, Roosville, Sannieshof, 2760</div>
+          <div class="detail"><i class="far fa-clock"></i> Mon-Fri 08:00 – 17:00</div>
+          <div style="margin-top:1.8rem; background:#f2f7fb; border-radius:60px; padding:0.8rem 1.8rem; display:inline-block; border:1px solid #e3eaf0;">
+            <i class="fas fa-envelope" style="color:#f5b342;"></i> jmminns2@gmail.com
+          </div>
+        </div>
+        <div class="contact-form">
+          <form action="https://formsubmit.co/jmminns2@gmail.com" method="POST">
+            <!-- honeypot & redirect (optional) -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" placeholder="e.g. John" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" placeholder="082 123 4567">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us about your vehicle or service needed..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send email</button>
+            <div class="note"><i class="fas fa-lock"></i> We'll reply to jmminns2@gmail.com</div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- extra: "From JM Motors" quote -->
+    <div class="quote-block">
+      <p><i class="fas fa-quote-left" style="color:#f5b342; margin-right:0.5rem;"></i> Reliable Auto Repairs in Sannieshof, North West — We are a trusted local mechanic shop dedicated to keeping your vehicle safe, reliable, and running at its best. Honest advice, quality workmanship, dependable service.</p>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <div class="container">
+      <div>
+        <strong style="color:white; font-size:1.2rem;">JM MOTORS</strong> <span style="opacity:0.6;">· auto repairs</span>
+        <div style="margin-top:0.4rem;"><i class="fas fa-map-pin" style="color:#f5b342;"></i> 7 Koos de la Rey St, Roosville, Sannieshof</div>
+      </div>
+      <div>
+        <span class="footer-phone"><i class="fas fa-phone-alt"></i> 082 580 5232</span>
+        <div style="margin-top:0.3rem;"><i class="far fa-clock"></i> Mon-Fri 08:00 – 17:00</div>
+      </div>
+      <div>
+        <small>© 2026 JM Motors · placeholder images</small>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
